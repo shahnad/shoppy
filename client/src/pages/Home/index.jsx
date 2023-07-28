@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import { Container, Box } from '@mui/material';
 import { AppBar, Footer, Header } from '../../components';
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -48,8 +48,19 @@ const CardItem = ({ card }) => (<Grid item key={card} xs={12} sm={6} md={4}>
             </Typography>
         </CardContent>
         <CardActions>
-            <Button size="small">View</Button>
-            <Button size="small">Edit</Button>
+            <Box display="flex" flexDirection="row" justifyContent="space-between" width="100%" alignItems="center">
+                <span>
+                    <Typography align='left' variant="body2" >
+                        M.R.P :
+                    </Typography>
+                    <Typography align='left' gutterBottom variant="h5" component="h1">
+                        <strong style={{ textDecorationLine: 'line-through', color: 'red' }}>150/-</strong>
+                        <strong  >120/-</strong>
+                    </Typography>
+                </span>
+
+                <Button variant='contained' color='primary' size="small">Order Now</Button>
+            </Box>
         </CardActions>
     </Card>
 </Grid>)
