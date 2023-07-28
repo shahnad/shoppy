@@ -7,7 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Footer, Header } from '../../components';
+import { AppBar, Footer, Header } from '../../components';
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -15,13 +15,14 @@ export default function HomePage() {
 
     return (
         <>
+            <AppBar />
             <main>
                 <Header />
                 <Container sx={{ py: 8 }} maxWidth="lg">
                     <Grid container spacing={2}>
-                        {cards.map((card) => (<React.Fragment  key={card} >
+                        {cards.map((card) => (<React.Fragment key={card} >
                             <CardItem card={card} />
-                            </React.Fragment>
+                        </React.Fragment>
                         ))}
                     </Grid>
                 </Container>
@@ -39,7 +40,7 @@ const CardItem = ({ card }) => (<Grid item key={card} xs={12} sm={6} md={4}>
         />
         <CardContent sx={{ flexGrow: 1 }}>
             <Typography align='left' gutterBottom variant="h5" component="h2">
-              juc
+                juc
             </Typography>
             <Typography align='left' variant="body2">
                 This is a media card. You can use this section to describe the
