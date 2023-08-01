@@ -1,4 +1,4 @@
-const { success: SUCCESS } = require('../utils/config');
+const { SUCCESS } = require('../utils/config');
 const { getCategories } = require("../queries/categories")
 
 const getCategoriesController = async (req, res, next) => {
