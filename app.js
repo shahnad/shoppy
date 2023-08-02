@@ -1,17 +1,17 @@
-var createError = require('http-errors');
+const createError = require('http-errors');
 require('dotenv').config()
-var express = require('express');
-const db = require("./db/index")
+const express = require('express');
 
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var categoriesRouter = require('./routes/categories');
-var productsRouter = require('./routes/products');
 
-var app = express();
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const categoriesRouter = require('./routes/categories');
+const newsRouter = require('./routes/news');
+
+const app = express();
 app.use(express.static('client/build'));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/categories',categoriesRouter)
-app.use('/products',productsRouter)
+app.use('/news',newsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

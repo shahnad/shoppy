@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '123123',
-    database: 'jucc-db'
+    database: 'news-app'
 }).promise();
 
 connection.connect(function (err) {
