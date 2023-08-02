@@ -1,0 +1,4 @@
+{"level":"info","message":"SELECT *, (SELECT COUNT(*) FROM news) as total FROM news"}
+{"level":"info","message":"SELECT *, (SELECT COUNT(*) FROM news) as total FROM news WHERE author = \"shahnad\""}
+{"level":"info","message":"SELECT *, (SELECT COUNT(*) FROM news) as total FROM news WHERE author = \"\""}
+{"level":"info","message":"SELECT *, (SELECT COUNT(*) FROM news) as total FROM news WHERE author = \"\""}

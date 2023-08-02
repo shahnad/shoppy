@@ -1,4 +1,5 @@
 const connection = require("../../db");
+const logger = require("../../utils/logger");
 
 // this fn is used to get all categories
 const getNews = async ({ category_id = '', author = '', region_id = '' }) => {
@@ -14,7 +15,7 @@ const getNews = async ({ category_id = '', author = '', region_id = '' }) => {
         query += ` WHERE ${conditions.join(' AND ')}`;
     }
 
-    console.log(query);
+    logger.info(query)
     return connection.query(query);
 }
 
