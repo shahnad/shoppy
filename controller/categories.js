@@ -1,5 +1,6 @@
 const { SUCCESS } = require('../utils/config');
-const { getCategories } = require("../queries/categories")
+const { getCategories } = require("../queries/categories");
+const logger = require('../utils/logger');
 
 const getCategoriesController = async (req, res, next) => {
     try {
@@ -10,10 +11,12 @@ const getCategoriesController = async (req, res, next) => {
             data: { rows, total: total }
         })
     } catch (error) {
-        console.log(error,"error");
+        logger.error(error)
         res.send({ error:error })
     }
   
 }
+
+
 
 module.exports = { getCategoriesController }
